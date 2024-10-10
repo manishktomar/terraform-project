@@ -2,13 +2,13 @@
 Terraform is open-source communication as a system software tool created by HashiCorp. It is an instrument for building, altering, and versioning transportation safely and professionally. Terraform can direct existing and accepted service providers as well as convention in-house solutions.
 
 - Terraform 1 Tier Deployment [Project](./terraform-1-tier-deployment)
-- Terraform 2 Tier Deployment
-- Terraform Multi Tier Deployment
-- Terraform Module Deployment
-- Terraform Secret
-- Terraform Basic Commands
+- Terraform 2 Tier Deployment [Project](./terraform-2-tier-deployment)
+- Terraform Multi Tier Deployment [Project](./terraform-multi-tier-deployment)
+- Terraform Module Deployment [Project](./terraform-module-project)
+- Terraform Secret 
+- Terraform Basic Commands 
 
-### 1. Terraform 1 Tier Deployment
+## 1. Terraform 1 Tier Deployment
 #### Project: Deploy a simple web application on a single EC2 instance.
 Components:
 - EC2 instance: Single server for web application.
@@ -18,7 +18,7 @@ Components:
 - Auto Scaling: Optional addition of scaling policies to automatically handle traffic surges.
 
 
-### 2. Terraform 2 Tier Deployment
+## 2. Terraform 2 Tier Deployment
 #### Project: Deploy a web and database architecture.
 Components:
 - Web Layer: EC2 instances in an Auto Scaling Group with a Load Balancer (ALB).
@@ -28,7 +28,7 @@ Components:
 - Module-based approach: Separate modules for networking, compute (web), and database.
 
 
-### 3. Terraform Multi Tier Deployment
+## 3. Terraform Multi Tier Deployment
 #### Project: Deploy a full-scale production-ready multi-tier application.
 Components:
 - Frontend Layer: Web servers (Auto Scaling EC2 instances) behind an ALB.
@@ -40,7 +40,7 @@ Components:
 - Monitoring and Logging: Integrate CloudWatch for logs and metrics.
 
 
-### 4. Terraform Module Deployment
+## 4. Terraform Module Deployment
 #### Project: Create reusable Terraform modules for each component in the infrastructure
 Components:
 - VPC Module: Define networking, subnets, gateways, and route tables.
@@ -53,8 +53,7 @@ Components:
 - Terraform Remote State: Set up remote state management using AWS S3/DynamoDB to manage shared state files.
 
 
-### 5. Terraform Secret
-
+## 5. Terraform Secret
 1. secrets.tfvars
     ```
     aws_access_key = "YOUR_AWS_ACCESS_KEY"
@@ -66,7 +65,7 @@ Components:
     terraform apply -var-file="secrets.tfvars"
     ```
 
-### Terraform Basic Commands:
+## Terraform Basic Commands:
 
 ### Step 1: Initializing Terraform 
 
