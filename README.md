@@ -1,12 +1,12 @@
-#  Terraform
+#  Terraform Projects
 Terraform is open-source communication as a system software tool created by HashiCorp. It is an instrument for building, altering, and versioning transportation safely and professionally. Terraform can direct existing and accepted service providers as well as convention in-house solutions.
 
-- Terraform 1 Tier Deployment [Project](./terraform-1-tier-deployment)
-- Terraform 2 Tier Deployment [Project](./terraform-2-tier-deployment)
-- Terraform Multi Tier Deployment [Project](./terraform-multi-tier-deployment)
-- Terraform Module Deployment [Project](./terraform-module-project)
-- Terraform Secret 
-- Terraform Basic Commands 
+1. Terraform 1 Tier Deployment [Project](./terraform-1-tier-deployment)
+2. Terraform 2 Tier Deployment [Project](./terraform-2-tier-deployment)
+3. Terraform Multi Tier Deployment [Project](./terraform-multi-tier-deployment)
+4. Terraform Module Deployment [Project](./terraform-module-project)
+5. Terraform Secret 
+6. Terraform Basic Commands 
 
 ## 1. Terraform 1 Tier Deployment
 #### Project: Deploy a simple web application on a single EC2 instance.
@@ -65,7 +65,7 @@ Components:
     terraform apply -var-file="secrets.tfvars"
     ```
 
-## Terraform Basic Commands:
+## 6. Terraform Basic Commands:
 
 ### Step 1: Initializing Terraform 
 
