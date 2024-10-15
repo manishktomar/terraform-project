@@ -45,6 +45,17 @@
 
 - Choose Token > Enter Root Token
 
+### 4. Setup on Vault
+Once login, choose the KV or any other as per the requirement
+     ![image](https://github.com/user-attachments/assets/c5e0168a-b768-4612-accf-024afa1097a0)
+
+    ```
+    Choose = KV (KeyValue)
+    Path = **secret** > Enable Engine
+    Path for this secret = **test-vault**
+    Secret Data = username (key) | xxxxx (password)
+    ```
+    
 ### 4. Configure Terraform to read the secret from Vault.
 - Enable AppRole Authentication:
     ```
