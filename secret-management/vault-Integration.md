@@ -1,6 +1,7 @@
 # HashiCorp Vault Setup
 
-### 1. To install Vault on the EC2 instance, you can use the following steps:
+### 1. Install Vault on the EC2 instance
+To install Vault on the EC2 instance, you can use the following steps:
     ```
     sudo apt update && sudo apt install gpg
     wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -14,6 +15,7 @@
     ```
 
 ### 2. Start Vault
+To start Vault, you can use the following command:
     ```
     vault server -dev -dev-listen-address="0.0.0.0:8200"
     ```
