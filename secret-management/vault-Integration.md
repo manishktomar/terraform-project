@@ -56,19 +56,21 @@ Once login, choose the KV or any other as per the requirement
     Secret Data = username (key) | xxxxx (password)
     ```
     
-### 4. Configure Terraform to read the secret from Vault.
+### 5. Configure Terraform to read the secret from Vault.
 - Enable AppRole Authentication:
     ```
     vault auth enable approle
     ```
 
-- Create an AppRole:
+- Create an policies:
     ```
-    vault policy write terraform - <<EOF
+    vault policy write **terraform** - <<EOF
     path "*" {
     capabilities = ["list", "read"]
     }
-
+    ```
+  
+    ```
     path "secrets/data/*" {
     capabilities = ["create", "read", "update", "delete", "list"]
     }
@@ -100,15 +102,49 @@ Now you'll need to create an AppRole with appropriate policies and configure its
     token_policies=terraform
     ```
 
-### 4. Generate Role ID and Secret ID:
+### 6. Generate Role ID and Secret ID:
 After creating the AppRole, you need to generate a Role ID and Secret ID pair. The Role ID is a static identifier, while the Secret ID is a dynamic credential.
 
 - Generate Role ID:
     ```
-    vault read auth/approle/role/my-approle/role-id
+    vault read auth/approle/role/terraform/role-id
     ```
 
 - Generate Secret ID:
     ```
-    vault write -f auth/approle/role/my-approle/secret-id
+    vault write -f auth/approle/role/terraform/secret-id
+    ```
+
+### 7. Add Role ID and Secret ID in main.tf:
+- Add Valut details in main.tf and test
+    ```
+    provider "aws" {
+      region = "us-east-1"
+    }
+    
+    provider "vault" {
+      address = "http://AWS-Public-IP:8200"
+      skip_child_token = true
+    
+      auth_login {
+        path = "auth/approle/login"
+    
+        parameters = {
+          role_id = "<>"
+          secret_id = "<>"
+        }
+      }
+    }
+    
+    data "vault_kv_secret_v2" "example" {
+      mount = "kv" // change it according to your mount
+      name  = "test-vault" // change it according to your secret
+    }
+    ```
+- Apply Terraform CMD
+    ```
+    terraform init
+    terraform plan
+    terraform validate
+    terrafrom apply
     ```
