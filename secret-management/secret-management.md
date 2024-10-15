@@ -7,14 +7,14 @@
 
 
 ### 1. Environment Variables (Recommended for AWS Credentials)
-You can store sensitive data like AWS credentials in environment variables and have Terraform automatically pick them up.
+- You can store sensitive data like AWS credentials in environment variables and have Terraform automatically pick them up.
     ```
     export AWS_ACCESS_KEY_ID=your_access_key
     export AWS_SECRET_ACCESS_KEY=your_secret_key
     ```
 
 ### 2. Terraform Variables (Sensitive Type)
-When you need to pass sensitive data into your Terraform configuration, use sensitive variables. The sensitive flag ensures that the value is masked in Terraform's output.
+- When you need to pass sensitive data into your Terraform configuration, use sensitive variables. The sensitive flag ensures that the value is masked in Terraform's output.
     ```
     variable "db_password" {
     description = "The password for the database"
@@ -29,7 +29,7 @@ When you need to pass sensitive data into your Terraform configuration, use sens
     ```
 
 ### 3. AWS Secrets Manager
-AWS Secrets Manager is a service to securely store and retrieve credentials. Terraform can pull secrets directly from AWS Secrets Manager.
+- AWS Secrets Manager is a service to securely store and retrieve credentials. Terraform can pull secrets directly from AWS Secrets Manager.
     ```
     data "aws_secretsmanager_secret_version" "example" {
     secret_id = "your-secret-id"
@@ -41,7 +41,7 @@ AWS Secrets Manager is a service to securely store and retrieve credentials. Ter
     }
     ```
 ### 4. Vault (HashiCorp Vault)
-Advanced secret management and access control, HashiCorp Vault can be integrated with Terraform to manage secrets securely.
+- Advanced secret management and access control, HashiCorp Vault can be integrated with Terraform to manage secrets securely.
     ```
     provider "vault" {
     address = "https://vault.yourdomain.com"
