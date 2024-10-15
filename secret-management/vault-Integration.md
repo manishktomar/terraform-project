@@ -16,7 +16,9 @@
     ```
 
 ### 2. Start Vault
-To start Vault, you can use the following command:
+- To start Vault, you can use the following command:
+  ![image](https://github.com/user-attachments/assets/7999c90a-32f8-45ee-9075-bfc32c719737)
+
     ```
     vault server -dev -dev-listen-address="0.0.0.0:8200"
     ```
