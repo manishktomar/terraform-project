@@ -41,9 +41,9 @@
     0.0.0.0:8200
     ```
     ![image](https://github.com/user-attachments/assets/40f82586-9b42-4fd9-bb60-f1020763a0d7)
+    ![image](https://github.com/user-attachments/assets/be14703a-a6bf-41d7-96f0-d024fd9e483e)
 
 - Choose Token > Enter Root Token
-  ![image](https://github.com/user-attachments/assets/96c8d0b3-7326-4353-9774-5f4d5df5d678)
 
 ### 4. Configure Terraform to read the secret from Vault.
 - Enable AppRole Authentication:
