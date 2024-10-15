@@ -27,7 +27,7 @@
     export VAULT_ADDR='http://0.0.0.0:8200'
     vault login <root-token>
     ```
-**Enable 8200 port on EC2 Machine** 
+- **Enable 8200 port on EC2 Machine** 
     ```
     EC2 Instance > Security > Security Group
     Edit Inbound Rules > Add Rule
@@ -51,7 +51,7 @@ Once login, choose the KV or any other as per the requirement
 
     ```
     Choose = KV (KeyValue)
-    Path = **secret** > Enable Engine
+    Path = **kv** > Enable Engine
     Path for this secret = **test-vault**
     Secret Data = username (key) | xxxxx (password)
     ```
